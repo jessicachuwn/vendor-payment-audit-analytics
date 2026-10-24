@@ -1,0 +1,7 @@
+
+deployment_id,change_id,application,deployed_by,deployment_date
+DEP001,CHG001,Dynamics AX,release01,2026-01-08
+DEP002,CHG002,Dynamics AX,release01,2026-01-13
+DEP003,CHG003,Dynamics AX,dev01,2026-01-16
+DEP004,CHG004,Dynamics AX,release01,2026-01-20
+DEP005,CHG999,Dynamics AX,release01,2026-01-29

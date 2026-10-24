@@ -1,0 +1,8 @@
+
+user_id,developer_access,change_approval_access,production_deployment_access
+dev01,Yes,No,Yes
+dev02,Yes,No,No
+dev03,Yes,No,No
+mgr01,No,Yes,No
+mgr02,No,Yes,No
+release01,No,No,Yes
