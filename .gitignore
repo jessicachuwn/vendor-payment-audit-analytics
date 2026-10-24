@@ -218,3 +218,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Generated audit reports
+outputs/
+
+# Local Python environment
+.venv/
