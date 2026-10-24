@@ -1,0 +1,3 @@
+
+report_name,source_system,legal_entity,period_start,period_end,payment_status,report_type,generated_by
+AP Payment Detail,Dynamics AX,US01,2026-01-01,2026-01-31,Posted,Standard ERP Report,AP Reporting Team
