@@ -36,9 +36,10 @@ expected_records = 18
 expected_groups = 9
 
 if len(results) == expected_records and group_count == expected_groups:
-    print("PASS - SQL results match previous Python test")
+    print("PASS - V3 regression baseline matched")
 else:
-    print("REVIEW - SQL results differ from previous Python test")
+    print("REVIEW - Results differ from V3 regression baseline")
+    print("Investigate data changes or SQL logic changes")
 
 print("\n=== EXCEPTION DETAILS ===")
 print(results.to_string(index=False))
