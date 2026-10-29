@@ -36,6 +36,8 @@ The analysis incorporates payment headers, invoice records, payment settlements,
 
 ## Key Audit Tests
 
+The audit findings summarized below are based on the full V3 synthetic simulation dataset, which is maintained locally. The publicly available Demo dataset provides a smaller, reproducible subset of the duplicate-payment analysis (3 potential duplicate groups involving 6 payment records). The full V3 results and invoice-level overapplication findings are documented for methodology demonstration but cannot be independently reproduced from the public Demo dataset alone.
+
 ### AP-003: Duplicate Payment Detection
 
 SQL identifies potential duplicate payments using combinations of legal entity, vendor, payment date, currency, payment amount, and invoice references.
