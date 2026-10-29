@@ -38,7 +38,7 @@ The analysis incorporates payment headers, invoice records, payment settlements,
 
 The audit findings below were identified using the full V3 synthetic simulation dataset. The publicly available Demo dataset reproduces a subset of these findings, including 3 potential same-day duplicate-payment groups involving 6 payment records and both invoice-level overapplication exceptions (DE01: EUR 8,091.69; US02: USD 7,141.96). The full V3 duplicate-payment population of 9 groups involving 18 payment records cannot be reproduced from the Demo dataset alone.
 
-The Demo duplicate-payment test includes an automated regression check. The invoice-level overapplication SQL has also been executed and validated against the Demo dataset, but is not yet integrated into the automated Python regression runner.
+Both AP-003 Duplicate Payment Detection and AP-003F Invoice Overpayment Analysis are integrated into the Python regression runner. The runner executes both SQL tests against the selected dataset (Demo or V3), validates the results against predefined regression baselines, and exports separate CSV exception reports. Both datasets have successfully passed regression validation.
 
 ### AP-003: Duplicate Payment Detection
 
