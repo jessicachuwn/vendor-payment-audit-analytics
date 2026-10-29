@@ -1,0 +1,44 @@
+
+name: Audit Analytics Regression Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  audit-regression:
+    name: AP Audit Regression
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+
+      - name: Build Demo SQLite database
+        run: python scripts/build_ap_database.py --dataset demo
+
+      - name: Run AP-003 and AP-003F regression tests
+        run: python scripts/run_ap003_sql.py --dataset demo
+
+      - name: Upload audit exception reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ap-audit-demo-exception-reports
+          path: |
+            simulation_2026/demo_outputs/AP003_SQL_duplicate_payments.csv
+            simulation_2026/demo_outputs/AP003F_SQL_invoice_overpayments.csv
+          if-no-files-found: warn
