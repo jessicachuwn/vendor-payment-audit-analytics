@@ -99,3 +99,68 @@ The final assessment would distinguish control design deficiencies, operating ef
 ## Professional Skills Demonstrated
 
 Risk-based audit planning, accounts payable controls, SQL-based transaction testing, Python-assisted audit analytics, exception investigation, data reconciliation, audit documentation, and version control.
+
+## How to Run
+
+### Prerequisites
+
+- Python 3.10 or later
+- pandas
+- SQLite (accessed through Python's built-in `sqlite3` module)
+
+Install the required Python package:
+
+```bash
+python -m pip install pandas
+```
+
+### Data Setup
+
+This project uses synthetic ERP-style accounts payable data.
+
+The V3 source CSV files are stored locally and are not currently distributed with the GitHub repository.
+
+To run the AP-003 analysis, place the following files in `simulation_2026/v3_data/`:
+
+- `ap_payments.csv`
+- `ap_invoices.csv`
+- `payment_settlements.csv`
+- `payment_approvals.csv`
+
+### Step 1: Build the SQLite Database
+
+From the repository root, run:
+
+```bash
+python scripts/build_ap_database.py
+```
+
+This imports the four CSV files into `simulation_2026/ap_audit_v3.db`.
+
+**Note:** Re-running this script replaces the four corresponding SQLite tables.
+
+### Step 2: Run AP-003 Duplicate Payment Detection
+
+```bash
+python scripts/run_ap003_sql.py
+```
+
+The script executes `sql/ap003_duplicate_payments.sql`, counts potential duplicate payment groups, compares the results against the fixed V3 regression baseline, and exports a CSV exception report.
+
+### Step 3: Review the Results
+
+The exception report is saved to:
+
+`simulation_2026/v3_outputs/AP003_SQL_duplicate_payments.csv`
+
+The audit workpaper is available at:
+
+`outputs/AP003_SQL_Python_Audit_Workpaper.xlsx`
+
+### Reproducibility Limitations
+
+The fixed regression baseline of 18 payment records across 9 groups applies only to the original V3 synthetic dataset.
+
+The other SQL investigation scripts are available for review, but they are not yet integrated into the automated Python runner.
+
+The repository does not currently contain all input data required for an independent end-to-end execution. No real vendor, banking, or confidential ERP information is used.
