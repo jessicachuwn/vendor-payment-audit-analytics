@@ -93,10 +93,26 @@ The final assessment would distinguish control design deficiencies, operating ef
 
 ## Repository Contents
 
-- `sql/` — SQL scripts for duplicate detection and invoice investigation.
-- `scripts/` — Python execution and validation scripts.
-- `outputs/AP003_SQL_Python_Audit_Workpaper.xlsx` — Audit analytics workpaper.
-- `simulation_2026/` — Local synthetic data and SQLite analysis environment; not necessarily included in the public repository.
+The repository contains two complementary sets of audit analytics:
+
+### Audit Control Testing
+
+- `duplicate_payment_test.py` — Vendor payment duplicate detection.
+- `population_validation.py` — Audit population validation.
+- `ipe_reliability.py` — Information Produced by the Entity (IPE) reliability testing.
+- `change_management_testing.py` — Change management control testing.
+- `report_logic_review.py` — System-generated report logic review.
+- `vendor_payment_analysis.py` — Vendor payment analysis.
+- `data/` — Supporting sample CSV datasets.
+
+### AP-003 Transaction Analytics
+
+- `sql/` — SQL scripts for duplicate-payment detection, invoice investigation, and invoice-level overpayment analysis.
+- `scripts/` — Python scripts for building SQLite databases, executing SQL tests, and validating regression results.
+- `simulation_2026/demo_data/` — Public synthetic ERP-style CSV datasets for reproducing the AP-003 Demo.
+- `outputs/AP003_SQL_Python_Audit_Workpaper.xlsx` — Audit analytics workpaper documenting the analytical approach and potential exceptions.
+
+The full V3 synthetic source dataset and locally generated SQLite databases are not distributed in the public repository.
 
 ## Professional Skills Demonstrated
 
