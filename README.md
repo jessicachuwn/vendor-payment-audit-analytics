@@ -36,7 +36,9 @@ The analysis incorporates payment headers, invoice records, payment settlements,
 
 ## Key Audit Tests
 
-The audit findings summarized below are based on the full V3 synthetic simulation dataset, which is maintained locally. The publicly available Demo dataset provides a smaller, reproducible subset of the duplicate-payment analysis (3 potential duplicate groups involving 6 payment records). The full V3 results and invoice-level overapplication findings are documented for methodology demonstration but cannot be independently reproduced from the public Demo dataset alone.
+The audit findings below were identified using the full V3 synthetic simulation dataset. The publicly available Demo dataset reproduces a subset of these findings, including 3 potential same-day duplicate-payment groups involving 6 payment records and both invoice-level overapplication exceptions (DE01: EUR 8,091.69; US02: USD 7,141.96). The full V3 duplicate-payment population of 9 groups involving 18 payment records cannot be reproduced from the Demo dataset alone.
+
+The Demo duplicate-payment test includes an automated regression check. The invoice-level overapplication SQL has also been executed and validated against the Demo dataset, but is not yet integrated into the automated Python regression runner.
 
 ### AP-003: Duplicate Payment Detection
 

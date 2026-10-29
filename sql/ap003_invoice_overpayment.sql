@@ -1,4 +1,4 @@
-﻿-- AP-003F: Invoice Overpayment Analysis
+-- AP-003F: Invoice Overpayment Analysis
 
 SELECT
     i.invoice_id,
